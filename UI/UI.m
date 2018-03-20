@@ -7,7 +7,3 @@
 //
 
 #import "UI.h"
-
-@implementation UI
-
-@end
