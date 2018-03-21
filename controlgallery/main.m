@@ -7,11 +7,23 @@
 //
 
 #import <ObjFW/ObjFW.h>
+#import "UI.h"
 
-int main(int argc, const char * argv[]) {
-    @autoreleasepool {
-        // insert code here...
-        of_log(@"Hello, World!");
-    }
-    return 0;
+#include <libui/ui.h>
+
+@interface controlgallery : OFObject <OFApplicationDelegate>
+
+@end
+
+OF_APPLICATION_DELEGATE(controlgallery);
+
+@implementation controlgallery
+
+- (void)applicationDidFinishLaunching {
+    
+    of_log(@"Hellow world");
+    
+    [OFApplication terminate];
 }
+
+@end

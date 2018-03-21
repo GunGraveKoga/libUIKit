@@ -75,6 +75,18 @@
     return [[UITabPage alloc] ui_initWithTab:uiTab(_uiControl) index:index];
 }
 
+- (void)appendControl:(UIControl *)control withName:(OFString *)name {
+    uiTabAppend(uiTab(_uiControl), name.UTF8String, control.uiControl);
+}
+
+- (void)insertControl:(UIControl *)control withName:(OFString *)name before:(int)index {
+    uiTabInsertAt(uiTab(_uiControl), name.UTF8String, index, control.uiControl);
+}
+
+- (void)removeControlAtIndex:(int)index {
+    uiTabDelete(uiTab(_uiControl), index);
+}
+
 @end
 
 @implementation UITab (Subscripting)

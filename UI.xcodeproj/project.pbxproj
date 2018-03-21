@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14808DE52063230700ACADF1 /* libUIKit.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED290E8C2061496A007C0B5B /* libUIKit.dylib */; };
 		ED290E902061496A007C0B5B /* UI.h in Headers */ = {isa = PBXBuildFile; fileRef = ED290E8F2061496A007C0B5B /* UI.h */; };
 		ED290E922061496A007C0B5B /* UI.m in Sources */ = {isa = PBXBuildFile; fileRef = ED290E912061496A007C0B5B /* UI.m */; };
 		ED290E9F20614996007C0B5B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ED290E9E20614996007C0B5B /* main.m */; };
@@ -51,6 +52,16 @@
 		ED290F0D206297A9007C0B5B /* UITab.h in Headers */ = {isa = PBXBuildFile; fileRef = ED290F0B206297A9007C0B5B /* UITab.h */; };
 		ED290F0E206297A9007C0B5B /* UITab.m in Sources */ = {isa = PBXBuildFile; fileRef = ED290F0C206297A9007C0B5B /* UITab.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		14808DE2206322FC00ACADF1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED290E842061496A007C0B5B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED290E8B2061496A007C0B5B;
+			remoteInfo = UIKit;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		ED290E9A20614996007C0B5B /* CopyFiles */ = {
@@ -124,18 +135,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14808DE52063230700ACADF1 /* libUIKit.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14808DE42063230700ACADF1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		ED290E832061496A007C0B5B = {
 			isa = PBXGroup;
 			children = (
 				ED290E8E2061496A007C0B5B /* UI */,
 				ED290E9D20614996007C0B5B /* controlgallery */,
 				ED290E8D2061496A007C0B5B /* Products */,
+				14808DE42063230700ACADF1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -267,6 +287,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				14808DE3206322FC00ACADF1 /* PBXTargetDependency */,
 			);
 			name = controlgallery;
 			productName = controlgallery;
@@ -348,6 +369,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		14808DE3206322FC00ACADF1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED290E8B2061496A007C0B5B /* UIKit */;
+			targetProxy = 14808DE2206322FC00ACADF1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		ED290E932061496A007C0B5B /* Debug */ = {

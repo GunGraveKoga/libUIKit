@@ -213,4 +213,8 @@ static void _onClickedCallback(uiMenuItem *sender, uiWindow *window, void *data)
     return item;
 }
 
+- (void)appendSeparator {
+    uiMenuAppendSeparator(uiMenu(_uiControl));
+}
+
 @end
