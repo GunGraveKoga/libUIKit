@@ -8,6 +8,20 @@
 
 #import "UIControl.h"
 
+OF_ASSUME_NONNULL_BEGIN
+
 @interface UISeparator : UIControl
 
++ (instancetype)separator OF_METHOD_FAMILY(new);
+
 @end
+
+@interface UIHorizontalSeparator : UISeparator
+
+@end
+
+@interface UIVerticalSeparator : UISeparator
+
+@end
+
+OF_ASSUME_NONNULL_END

@@ -11,4 +11,30 @@
 
 @implementation UIProgressBar
 
++ (instancetype)progressBar {
+    return [[self alloc] init];
+}
+
+- (instancetype)init {
+    self = [super init];
+    
+    _uiControl = uiNewProgressBar();
+    
+    if (_uiControl == NULL) {
+        return nil;
+    }
+    
+    _owner = true;
+    
+    return self;
+}
+
+- (int)value {
+    return uiProgressBarValue(uiProgressBar(_uiControl));
+}
+
+- (void)setValue:(int)value {
+    uiProgressBarSetValue(uiProgressBar(_uiControl), value);
+}
+
 @end

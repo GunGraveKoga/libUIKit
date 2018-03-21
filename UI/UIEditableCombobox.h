@@ -7,7 +7,14 @@
 //
 
 #import "UIControl.h"
+#import "UICombobox.h"
 
-@interface UIEditableCombobox : UIControl
+OF_ASSUME_NONNULL_BEGIN
+
+@interface UIEditableCombobox : UIControl <UICombobox>
+
+@property (nonatomic, copy, readwrite) OFString *currentText;
 
 @end
+
+OF_ASSUME_NONNULL_END
