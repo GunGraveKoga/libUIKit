@@ -8,6 +8,10 @@
 
 #import "UIControl.h"
 
+OF_ASSUME_NONNULL_BEGIN
+
 @interface UIRadioButtons : UIControl
 
 @end
+
+OF_ASSUME_NONNULL_END
