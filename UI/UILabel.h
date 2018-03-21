@@ -10,4 +10,10 @@
 
 @interface UILabel : UIControl
 
+@property (nonatomic, copy) OFString *text;
+
++ (instancetype)label OF_METHOD_FAMILY(new);
++ (instancetype)labelWithText:(OFString *)text OF_METHOD_FAMILY(new);
+- (instancetype)initWithText:(OFString *)text;
+
 @end

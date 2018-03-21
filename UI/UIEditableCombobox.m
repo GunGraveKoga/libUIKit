@@ -7,6 +7,7 @@
 //
 
 #import "UIEditableCombobox.h"
+#include <libui/ui.h>
 
 @implementation UIEditableCombobox
 

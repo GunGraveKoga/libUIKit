@@ -14,25 +14,20 @@ OF_ASSUME_NONNULL_BEGIN
 
 @interface UIControl : OFObject
 {
-    @protected
+@protected
     void *_uiControl;
     bool _owner;
 }
 
 @property (nonatomic, assign, readonly) uiControl *uiControl OF_RETURNS_INNER_POINTER;
 @property (nonatomic, assign, readonly) void *uiControlHandle OF_RETURNS_INNER_POINTER;
-@property (nonatomic, strong, nullable) UIControl *parent;
-@property (nonatomic, assign, getter=isVisible, readonly) bool visible;
-@property (nonatomic, assign, getter=isEnabled, readonly) bool enabled;
+@property (nonatomic, strong, nullable) OF_KINDOF(UIControl *) parent;
+@property (nonatomic, assign, getter=isVisible, setter=makeVisible:) bool visible;
+@property (nonatomic, assign, getter=isEnabled, setter=makeEnabled:) bool enabled;
 @property (nonatomic, assign, getter=isOnTopLevel, readonly) bool onTopLevel;
 @property (nonatomic, assign, getter=isEnabledToUser, readonly) bool enabledToUser;
 
 - (instancetype)initWithControl:(void *)control;
-
-- (void)show;
-- (void)hide;
-- (void)enable;
-- (void)disable;
 
 @end
 

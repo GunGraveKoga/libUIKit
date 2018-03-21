@@ -7,6 +7,7 @@
 //
 
 #import "UISpinbox.h"
+#include <libui/ui.h>
 
 @implementation UISpinbox
 

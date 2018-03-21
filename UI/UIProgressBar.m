@@ -7,6 +7,7 @@
 //
 
 #import "UIProgressBar.h"
+#include <libui/ui.h>
 
 @implementation UIProgressBar
 

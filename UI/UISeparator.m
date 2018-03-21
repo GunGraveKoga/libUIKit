@@ -7,6 +7,7 @@
 //
 
 #import "UISeparator.h"
+#include <libui/ui.h>
 
 @implementation UISeparator
 

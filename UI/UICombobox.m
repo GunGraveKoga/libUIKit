@@ -7,6 +7,7 @@
 //
 
 #import "UICombobox.h"
+#include <libui/ui.h>
 
 @implementation UICombobox
 

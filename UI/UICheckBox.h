@@ -8,6 +8,34 @@
 
 #import "UIControl.h"
 
-@interface UICheckBox : UIControl
+OF_ASSUME_NONNULL_BEGIN
+
+@protocol UICheckbox
+
+@optional
+- (void)toggled;
 
 @end
+
+@class UICheckbox;
+
+@protocol UICheckboxDelegate <OFObject>
+
+- (void)checkboxToggled:(OF_KINDOF(UICheckbox *))sender;
+
+@end
+
+@interface UICheckbox : UIControl <UICheckbox>
+
+@property (nonatomic, weak) id<UICheckboxDelegate> delegate;
+
+@property (nonatomic, copy) OFString *text;
+@property (nonatomic, assign, getter=isChecked, setter=makeChecked:) bool checked;
+
++ (instancetype)checkbox OF_METHOD_FAMILY(new);
++ (instancetype)checkboxWithText:(OFString *)text OF_METHOD_FAMILY(new);
+- (instancetype)initWithText:(OFString *)text;
+
+@end
+
+OF_ASSUME_NONNULL_END

@@ -7,6 +7,7 @@
 //
 
 #import "UISlider.h"
+#include <libui/ui.h>
 
 @implementation UISlider
 

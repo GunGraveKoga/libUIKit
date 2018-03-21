@@ -7,6 +7,7 @@
 //
 
 #import "UIMenu.h"
+#include <libui/ui.h>
 
 @implementation UIMenu
 

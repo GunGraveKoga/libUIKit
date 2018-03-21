@@ -40,8 +40,22 @@
     return (bool)(uiControlToplevel(uiControl(_uiControl)));
 }
 
+- (void)makeVisible:(bool)visible {
+    if (self.visible != visible) {
+        if (visible) uiControlShow(uiControl(_uiControl));
+        else uiControlHide(uiControl(_uiControl));
+    }
+}
+
 - (bool)isEnabled {
     return (bool)(uiControlEnabled(uiControl(_uiControl)));
+}
+
+- (void)makeEnabled:(bool)enabled {
+    if (self.enabled != enabled) {
+        if (enabled) uiControlEnable(uiControl(_uiControl));
+        else uiControlDisable(uiControl(_uiControl));
+    }
 }
 
 - (bool)isOnTopLevel {
@@ -52,27 +66,34 @@
     return (bool)(uiControlEnabledToUser(uiControl(_uiControl)));
 }
 
-- (void)show {
-    if (!(uiControlToplevel(uiControl(_uiControl)))) {
-        uiControlShow(uiControl(_uiControl));
+- (bool)isEqual:(id)object {
+    if (![super isEqual:object]) {
+        return _uiControl == ((__typeof__(self))object).uiControl;
     }
+    
+    return true;
 }
 
-- (void)hide {
-    if ((uiControlToplevel(uiControl(_uiControl)))) {
-        uiControlHide(uiControl(_uiControl));
-    }
+- (uint32_t)hash {
+    uint32_t hash = 0;
+    
+    OF_HASH_INIT(hash);
+    OF_HASH_ADD_HASH(hash, [super hash]);
+    
+    uint8_t *ptr = (uint8_t *)_uiControl;
+    
+    
+    for (int i = 0; i < sizeof(_uiControl); i++)
+        OF_HASH_ADD(hash, ptr[i]);
+    
+    OF_HASH_FINALIZE(hash);
+    
+    return hash;
 }
 
-- (void)enable {
-    if (!(uiControlEnabled(uiControl(_uiControl)))) {
-        uiControlEnable(uiControl(_uiControl));
-    }
-}
-
-- (void)disable {
-    if ((uiControlEnabled(uiControl(_uiControl)))) {
-        uiControlDisable(uiControl(_uiControl));
+- (void)dealloc {
+    if (_owner) {
+        uiControlDestroy(uiControl(_uiControl));
     }
 }
 

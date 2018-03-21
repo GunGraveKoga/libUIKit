@@ -7,6 +7,7 @@
 //
 
 #import "UIMultilineEntry.h"
+#include <libui/ui.h>
 
 @implementation UIMultilineEntry
 

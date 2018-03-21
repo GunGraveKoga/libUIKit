@@ -7,6 +7,7 @@
 //
 
 #import "UIGroup.h"
+#include <libui/ui.h>
 
 @implementation UIGroup
 
