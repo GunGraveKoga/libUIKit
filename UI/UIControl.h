@@ -10,6 +10,8 @@
 
 typedef struct uiControl uiControl;
 
+@class UIWindow;
+
 OF_ASSUME_NONNULL_BEGIN
 
 @interface UIControl : OFObject
@@ -28,6 +30,7 @@ OF_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign, getter=isEnabledToUser, readonly) bool enabledToUser;
 
 - (instancetype)initWithControl:(void *)control;
+- (OF_KINDOF(UIWindow *) _Nullable)findWindow;
 
 @end
 

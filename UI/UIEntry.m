@@ -12,7 +12,7 @@
 static void _onChangedCallback(uiEntry *entry, void *data) {
     @autoreleasepool {
         if (data != NULL) {
-            UIEntry *e = (__bridge UIEntry *)data;
+            UIControl<UIEntry> *e = (__bridge __typeof__(e))data;
             
             if ([e respondsToSelector:@selector(changed)])
                 [e changed];

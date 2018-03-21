@@ -7,10 +7,17 @@
 //
 
 #import "UIControl.h"
+#import "UIEntry.h"
 
 OF_ASSUME_NONNULL_BEGIN
 
-@interface UIMultilineEntry : UIControl
+@interface UIMultilineEntry : UIControl <UIEntry>
+
+- (void)appendText:(OFString *)text;
+
+@end
+
+@interface UINonWrappingMultilineEntry : UIMultilineEntry
 
 @end
 

@@ -7,6 +7,7 @@
 //
 
 #import "UIControl.h"
+#import "UIWindow.h"
 #include <libui/ui.h>
 
 @implementation UIControl
@@ -29,7 +30,13 @@
 }
 
 - (UIControl *)parent {
-    return [[UIControl alloc] initWithControl:uiControlParent(uiControl(_uiControl))];
+    
+    uiControl *_parent = uiControl(_uiControl);
+    
+    if (_parent != NULL)
+        return [[UIControl alloc] initWithControl:uiControlParent(_parent)];
+    
+    return nil;
 }
 
 - (void)setParent:(UIControl *)parent {
@@ -64,6 +71,17 @@
 
 - (bool)isEnabledToUser {
     return (bool)(uiControlEnabledToUser(uiControl(_uiControl)));
+}
+
+- (UIWindow *)findWindow {
+    UIControl *parent;
+    
+    while ((parent = self.parent) != nil) {
+        if ([parent isKindOfClass:[UIWindow class]])
+            break;
+    }
+    
+    return (UIWindow *)parent;
 }
 
 - (bool)isEqual:(id)object {

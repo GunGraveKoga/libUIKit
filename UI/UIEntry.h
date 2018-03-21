@@ -10,7 +10,17 @@
 
 OF_ASSUME_NONNULL_BEGIN
 
+@protocol UIEntryDelegate;
+
 @protocol UIEntry
+
+@required
+@property (nonatomic, weak) id<UIEntryDelegate> delegate;
+
+@property (nonatomic, copy) OFString *text;
+@property (nonatomic, getter=isReadOnly, setter=makeReadOnly:) bool readOnly;
+
++ (instancetype)entry;
 
 @optional
 - (void)changed;
@@ -21,18 +31,11 @@ OF_ASSUME_NONNULL_BEGIN
 
 @protocol UIEntryDelegate <OFObject>
 
-- (void)entryDidChanged:(OF_KINDOF(UIEntry *))sender;
+- (void)entryDidChanged:(OF_KINDOF(UIControl<UIEntry> *))sender;
 
 @end
 
 @interface UIEntry : UIControl <UIEntry>
-
-@property (nonatomic, weak) id<UIEntryDelegate> delegate;
-
-@property (nonatomic, copy) OFString *text;
-@property (nonatomic, getter=isReadOnly, setter=makeReadOnly:) bool readOnly;
-
-+ (instancetype)entry;
 
 @end
 

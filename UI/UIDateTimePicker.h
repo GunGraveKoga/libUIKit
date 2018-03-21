@@ -14,4 +14,12 @@ OF_ASSUME_NONNULL_BEGIN
 
 @end
 
+@interface UIDatePicker : UIDateTimePicker
+
+@end
+
+@interface UITimePicker : UIDateTimePicker
+
+@end
+
 OF_ASSUME_NONNULL_END

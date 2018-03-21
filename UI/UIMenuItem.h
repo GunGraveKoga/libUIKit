@@ -10,7 +10,24 @@
 
 OF_ASSUME_NONNULL_BEGIN
 
-@interface UIMenuItem : UIControl
+@protocol UIMenuItem
+
+@optional
+- (void)clickedOnWindow:(OF_KINDOF(UIWindow *))window;
+
+@end
+
+@interface UIMenuItem : UIControl <UIMenuItem>
+
+@property (nonatomic, copy, readonly) OFString *name;
+
+@property (nonatomic, assign, getter=isChecked, setter=makeChecked:) bool checked;
+
++ (instancetype)itemWithName:(OFString *)name OF_METHOD_FAMILY(new);
+- (instancetype)initWithName:(OFString *)name;
+
+- (void)enable;
+- (void)disable;
 
 @end
 
