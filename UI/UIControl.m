@@ -47,22 +47,24 @@
     return (bool)(uiControlToplevel(uiControl(_uiControl)));
 }
 
-- (void)makeVisible:(bool)visible {
-    if (self.visible != visible) {
-        if (visible) uiControlShow(uiControl(_uiControl));
-        else uiControlHide(uiControl(_uiControl));
-    }
+- (void)show {
+    uiControlShow(uiControl(_uiControl));
+}
+
+- (void)hide {
+    uiControlHide(uiControl(_uiControl));
 }
 
 - (bool)isEnabled {
     return (bool)(uiControlEnabled(uiControl(_uiControl)));
 }
 
-- (void)makeEnabled:(bool)enabled {
-    if (self.enabled != enabled) {
-        if (enabled) uiControlEnable(uiControl(_uiControl));
-        else uiControlDisable(uiControl(_uiControl));
-    }
+- (void)enable {
+    uiControlEnable(uiControl(_uiControl));
+}
+
+- (void)disable {
+    uiControlDisable(uiControl(_uiControl));
 }
 
 - (bool)isOnTopLevel {

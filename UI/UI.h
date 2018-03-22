@@ -7,6 +7,7 @@
 //
 
 #import <ObjFW/ObjFW.h>
+#import "UIMainQueue.h"
 #import "UIControl.h"
 #import "UIWindow.h"
 #import "UIButton.h"
@@ -27,3 +28,9 @@
 #import "UIMultilineEntry.h"
 #import "UIMenuItem.h"
 #import "UIMenu.h"
+
+@protocol UIApplicationDelegate <OFApplicationDelegate>
+
+@end
+
+extern int UIApplicationMain(int argc, char **argv);

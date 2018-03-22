@@ -19,8 +19,6 @@
 		ED290EBD2061611B007C0B5B /* UIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = ED290EBB2061611B007C0B5B /* UIButton.m */; };
 		ED290EC02061612F007C0B5B /* UIBox.h in Headers */ = {isa = PBXBuildFile; fileRef = ED290EBE2061612F007C0B5B /* UIBox.h */; };
 		ED290EC12061612F007C0B5B /* UIBox.m in Sources */ = {isa = PBXBuildFile; fileRef = ED290EBF2061612F007C0B5B /* UIBox.m */; };
-		ED290EC420616142007C0B5B /* UICheckbox.h in Headers */ = {isa = PBXBuildFile; fileRef = ED290EC220616142007C0B5B /* UICheckbox.h */; };
-		ED290EC520616142007C0B5B /* UICheckbox.m in Sources */ = {isa = PBXBuildFile; fileRef = ED290EC320616142007C0B5B /* UICheckbox.m */; };
 		ED290ECA206161D9007C0B5B /* UIEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = ED290EC8206161D9007C0B5B /* UIEntry.h */; };
 		ED290ECB206161D9007C0B5B /* UIEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = ED290EC9206161D9007C0B5B /* UIEntry.m */; };
 		ED290ECE206161EE007C0B5B /* UILabel.h in Headers */ = {isa = PBXBuildFile; fileRef = ED290ECC206161EE007C0B5B /* UILabel.h */; };
@@ -51,6 +49,10 @@
 		ED290F0420616481007C0B5B /* UIMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = ED290F0220616481007C0B5B /* UIMenu.m */; };
 		ED290F0D206297A9007C0B5B /* UITab.h in Headers */ = {isa = PBXBuildFile; fileRef = ED290F0B206297A9007C0B5B /* UITab.h */; };
 		ED290F0E206297A9007C0B5B /* UITab.m in Sources */ = {isa = PBXBuildFile; fileRef = ED290F0C206297A9007C0B5B /* UITab.m */; };
+		ED290F112063C680007C0B5B /* UIMainQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = ED290F0F2063C680007C0B5B /* UIMainQueue.h */; };
+		ED290F122063C680007C0B5B /* UIMainQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = ED290F102063C680007C0B5B /* UIMainQueue.m */; };
+		ED290F152063E3DA007C0B5B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED290F142063E3DA007C0B5B /* AppDelegate.m */; };
+		ED290F192063E55B007C0B5B /* UICheckbox.m in Sources */ = {isa = PBXBuildFile; fileRef = ED290F172063E523007C0B5B /* UICheckbox.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,8 +91,6 @@
 		ED290EBB2061611B007C0B5B /* UIButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIButton.m; sourceTree = "<group>"; };
 		ED290EBE2061612F007C0B5B /* UIBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIBox.h; sourceTree = "<group>"; };
 		ED290EBF2061612F007C0B5B /* UIBox.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIBox.m; sourceTree = "<group>"; };
-		ED290EC220616142007C0B5B /* UICheckbox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UICheckbox.h; sourceTree = "<group>"; };
-		ED290EC320616142007C0B5B /* UICheckbox.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UICheckbox.m; sourceTree = "<group>"; };
 		ED290EC8206161D9007C0B5B /* UIEntry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIEntry.h; sourceTree = "<group>"; };
 		ED290EC9206161D9007C0B5B /* UIEntry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIEntry.m; sourceTree = "<group>"; };
 		ED290ECC206161EE007C0B5B /* UILabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UILabel.h; sourceTree = "<group>"; };
@@ -121,6 +121,12 @@
 		ED290F0220616481007C0B5B /* UIMenu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIMenu.m; sourceTree = "<group>"; };
 		ED290F0B206297A9007C0B5B /* UITab.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UITab.h; sourceTree = "<group>"; };
 		ED290F0C206297A9007C0B5B /* UITab.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UITab.m; sourceTree = "<group>"; };
+		ED290F0F2063C680007C0B5B /* UIMainQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIMainQueue.h; sourceTree = "<group>"; };
+		ED290F102063C680007C0B5B /* UIMainQueue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIMainQueue.m; sourceTree = "<group>"; };
+		ED290F132063E3DA007C0B5B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		ED290F142063E3DA007C0B5B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		ED290F162063E523007C0B5B /* UICheckbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICheckbox.h; sourceTree = "<group>"; };
+		ED290F172063E523007C0B5B /* UICheckbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICheckbox.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,8 +187,6 @@
 				ED290EBB2061611B007C0B5B /* UIButton.m */,
 				ED290EBE2061612F007C0B5B /* UIBox.h */,
 				ED290EBF2061612F007C0B5B /* UIBox.m */,
-				ED290EC220616142007C0B5B /* UICheckbox.h */,
-				ED290EC320616142007C0B5B /* UICheckbox.m */,
 				ED290EC8206161D9007C0B5B /* UIEntry.h */,
 				ED290EC9206161D9007C0B5B /* UIEntry.m */,
 				ED290ECC206161EE007C0B5B /* UILabel.h */,
@@ -199,6 +203,8 @@
 				ED290EE120616260007C0B5B /* UIProgressBar.m */,
 				ED290EF520616434007C0B5B /* UISeparator.h */,
 				ED290EF620616435007C0B5B /* UISeparator.m */,
+				ED290F162063E523007C0B5B /* UICheckbox.h */,
+				ED290F172063E523007C0B5B /* UICheckbox.m */,
 				ED290EE420616275007C0B5B /* UICombobox.h */,
 				ED290EE520616275007C0B5B /* UICombobox.m */,
 				ED290EE82061632E007C0B5B /* UIEditableCombobox.h */,
@@ -213,6 +219,8 @@
 				ED290EFE20616470007C0B5B /* UIMenuItem.m */,
 				ED290F0120616481007C0B5B /* UIMenu.h */,
 				ED290F0220616481007C0B5B /* UIMenu.m */,
+				ED290F0F2063C680007C0B5B /* UIMainQueue.h */,
+				ED290F102063C680007C0B5B /* UIMainQueue.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -221,6 +229,8 @@
 			isa = PBXGroup;
 			children = (
 				ED290E9E20614996007C0B5B /* main.m */,
+				ED290F132063E3DA007C0B5B /* AppDelegate.h */,
+				ED290F142063E3DA007C0B5B /* AppDelegate.m */,
 			);
 			path = controlgallery;
 			sourceTree = "<group>";
@@ -251,8 +261,8 @@
 				ED290ECE206161EE007C0B5B /* UILabel.h in Headers */,
 				ED290EC02061612F007C0B5B /* UIBox.h in Headers */,
 				ED290F0320616481007C0B5B /* UIMenu.h in Headers */,
+				ED290F112063C680007C0B5B /* UIMainQueue.h in Headers */,
 				ED290EDA20616229007C0B5B /* UISpinbox.h in Headers */,
-				ED290EC420616142007C0B5B /* UICheckbox.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,8 +346,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED290F192063E55B007C0B5B /* UICheckbox.m in Sources */,
 				ED290F0E206297A9007C0B5B /* UITab.m in Sources */,
-				ED290EC520616142007C0B5B /* UICheckbox.m in Sources */,
 				ED290E922061496A007C0B5B /* UI.m in Sources */,
 				ED290F0420616481007C0B5B /* UIMenu.m in Sources */,
 				ED290EFC2061645B007C0B5B /* UIMultilineEntry.m in Sources */,
@@ -356,6 +366,7 @@
 				ED290ECB206161D9007C0B5B /* UIEntry.m in Sources */,
 				ED290EE720616275007C0B5B /* UICombobox.m in Sources */,
 				ED290EEB2061632E007C0B5B /* UIEditableCombobox.m in Sources */,
+				ED290F122063C680007C0B5B /* UIMainQueue.m in Sources */,
 				ED290EC12061612F007C0B5B /* UIBox.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,6 +375,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED290F152063E3DA007C0B5B /* AppDelegate.m in Sources */,
 				ED290E9F20614996007C0B5B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

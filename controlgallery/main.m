@@ -9,21 +9,8 @@
 #import <ObjFW/ObjFW.h>
 #import "UI.h"
 
-#include <libui/ui.h>
-
-@interface controlgallery : OFObject <OFApplicationDelegate>
-
-@end
-
-OF_APPLICATION_DELEGATE(controlgallery);
-
-@implementation controlgallery
-
-- (void)applicationDidFinishLaunching {
-    
-    of_log(@"Hellow world");
-    
-    [OFApplication terminate];
+int main(int argc, char *argv[]) {
+    @autoreleasepool {
+        return UIApplicationMain(argc, argv);
+    }
 }
-
-@end
