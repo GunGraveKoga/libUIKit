@@ -157,9 +157,7 @@ static int _onCloseCallback(uiWindow *window, void *data) {
 }
 
 - (void)makeBorderless:(bool)borderless {
-    if (self.borderless != borderless) {
-        uiWindowSetBorderless(uiWindow(_uiControl), borderless);
-    }
+    uiWindowSetBorderless(uiWindow(_uiControl), borderless);
 }
 
 - (bool)isMargined {
@@ -167,9 +165,7 @@ static int _onCloseCallback(uiWindow *window, void *data) {
 }
 
 - (void)makeMargined:(bool)margined {
-    if (self.margined != margined) {
-        uiWindowSetMargined(uiWindow(_uiControl), margined);
-    }
+    uiWindowSetMargined(uiWindow(_uiControl), margined);
 }
 
 - (void)_invalidateHandle {

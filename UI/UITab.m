@@ -37,9 +37,7 @@
 }
 
 - (void)makeMargined:(bool)margined {
-    if (self.margined != margined) {
-        uiTabSetMargined(_tab, _idx, margined);
-    }
+    uiTabSetMargined(_tab, _idx, margined);
 }
 
 @end

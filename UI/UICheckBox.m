@@ -99,9 +99,7 @@ static void _onToggledCallback(uiCheckbox *checkbox, void *data) {
 }
 
 - (void)makeChecked:(bool)checked {
-    if (self.checked != checked) {
-        uiCheckboxSetChecked(uiCheckbox(_uiControl), checked);
-    }
+    uiCheckboxSetChecked(uiCheckbox(_uiControl), checked);
 }
 
 @end

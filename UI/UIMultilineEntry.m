@@ -79,9 +79,7 @@ static void _onChangedCallback(uiMultilineEntry *entry, void *data) {
 }
 
 - (void)makeReadOnly:(bool)readOnly {
-    if (self.readOnly != readOnly) {
-        uiMultilineEntrySetReadOnly(uiMultilineEntry(_uiControl), readOnly);
-    }
+    uiMultilineEntrySetReadOnly(uiMultilineEntry(_uiControl), readOnly);
 }
 
 - (void)appendText:(OFString *)text {

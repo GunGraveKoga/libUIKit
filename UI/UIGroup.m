@@ -70,9 +70,7 @@
 }
 
 - (void)makeMargined:(bool)margined {
-    if (self.margined != margined) {
-        uiGroupSetMargined(uiGroup(_uiControl), margined);
-    }
+    uiGroupSetMargined(uiGroup(_uiControl), margined);
 }
 
 - (void)setChild:(UIControl *)child {

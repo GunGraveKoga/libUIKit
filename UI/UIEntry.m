@@ -84,9 +84,7 @@ static void _onChangedCallback(uiEntry *entry, void *data) {
 }
 
 - (void)makeReadOnly:(bool)readOnly {
-    if (self.readOnly != readOnly) {
-        uiEntrySetReadOnly(uiEntry(_uiControl), readOnly);
-    }
+    uiEntrySetReadOnly(uiEntry(_uiControl), readOnly);
 }
 
 - (uiEntry *)_entryType {

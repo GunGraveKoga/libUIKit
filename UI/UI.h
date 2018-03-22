@@ -12,7 +12,7 @@
 #import "UIWindow.h"
 #import "UIButton.h"
 #import "UIBox.h"
-#import "UICheckBox.h"
+#import "UICheckbox.h"
 #import "UIEntry.h"
 #import "UILabel.h"
 #import "UITab.h"

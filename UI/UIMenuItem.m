@@ -44,9 +44,7 @@
 }
 
 - (void)makeChecked:(bool)checked {
-    if (self.checked != checked) {
-        uiMenuItemSetChecked(uiMenuItem(_uiControl), checked);
-    }
+    uiMenuItemSetChecked(uiMenuItem(_uiControl), checked);
 }
 
 - (void)enable {
