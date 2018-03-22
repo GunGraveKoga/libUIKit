@@ -9,6 +9,6 @@
 #import <ObjFW/ObjFW.h>
 #import "UI.h"
 
-@interface AppDelegate : OFObject <OFApplicationDelegate, UIWindowDelegate>
+@interface AppDelegate : OFObject <UIApplicationDelegate, UIWindowDelegate>
 
 @end

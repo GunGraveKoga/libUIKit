@@ -14,16 +14,11 @@ typedef struct uiControl uiControl;
 
 OF_ASSUME_NONNULL_BEGIN
 
-@interface UIControl : OFObject
-{
-@protected
-    void *_uiControl;
-    bool _owner;
-}
+@protocol UIControl
 
 @property (nonatomic, assign, readonly) uiControl *uiControl OF_RETURNS_INNER_POINTER;
 @property (nonatomic, assign, readonly) void *uiControlHandle OF_RETURNS_INNER_POINTER;
-@property (nonatomic, strong, nullable) OF_KINDOF(UIControl *) parent;
+@property (nonatomic, strong, nullable) OF_KINDOF(id<UIControl>) parent;
 @property (nonatomic, assign, getter=isVisible, readonly) bool visible;
 @property (nonatomic, assign, getter=isEnabled, readonly) bool enabled;
 @property (nonatomic, assign, getter=isOnTopLevel, readonly) bool onTopLevel;
@@ -36,6 +31,15 @@ OF_ASSUME_NONNULL_BEGIN
 - (void)hide;
 - (void)enable;
 - (void)disable;
+
+@end
+
+@interface UIControl : OFObject <UIControl>
+{
+@protected
+    void *_uiControl;
+    bool _owner;
+}
 
 @end
 

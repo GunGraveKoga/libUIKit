@@ -31,6 +31,8 @@
 
 @protocol UIApplicationDelegate <OFApplicationDelegate>
 
+- (bool)uiApplicationShouldQuit;
+
 @end
 
 extern int UIApplicationMain(int argc, char **argv);

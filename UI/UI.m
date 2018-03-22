@@ -11,6 +11,22 @@
 
 static const char *__defaultDelegateClassName = "AppDelegate";
 
+static int _onShouldQuitCallback(void *data) {
+    @autoreleasepool {
+        id<UIApplicationDelegate> delegate = [UIMainQueue delegate];
+        
+        if (delegate != nil && [delegate respondsToSelector:@selector(uiApplicationShouldQuit)]) {
+            bool res = [delegate uiApplicationShouldQuit];
+            
+            if (res && [delegate respondsToSelector:@selector(applicationWillTerminate)]) {
+                [delegate applicationWillTerminate];
+            }
+        }
+        
+        return 0;
+    }
+}
+
 @interface UIMainQueue()
 #ifdef OF_HAVE_CLASS_PROPERTIES
 @property (class, nonatomic, readwrite) id<UIApplicationDelegate> delegate;
@@ -40,6 +56,8 @@ int UIApplicationMain(int argc, char **argv) {
             abort();
         }
         
+        uiOnShouldQuit(&_onShouldQuitCallback, NULL);
+        
         return of_application_main(&argc, &argv, [[UIMainQueue alloc] ui_init]);
     }
 }
@@ -61,6 +79,13 @@ int UIApplicationMain(int argc, char **argv) {
     [UIMainQueue start];
     
     [OFApplication terminate];
+}
+
+- (void)applicationWillTerminate {
+    id<UIApplicationDelegate> delegate = [UIMainQueue delegate];
+    
+    if (delegate != nil && [delegate respondsToSelector:@selector(applicationWillTerminate)])
+        [delegate applicationWillTerminate];
 }
 
 @end

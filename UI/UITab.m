@@ -42,7 +42,9 @@
 
 @end
 
-@implementation UITab
+@implementation UITab {
+    OFMutableArray OF_GENERIC(UIControl *) *_pages;
+}
 
 + (instancetype)tab {
     return [[self alloc] init];
@@ -58,6 +60,7 @@
     }
     
     _owner = true;
+    _pages = [OFMutableArray array];
     
     return self;
 }
@@ -66,38 +69,44 @@
     return uiTabNumPages(uiTab(_uiControl));
 }
 
-- (UITabPage *)pageAtIndex:(int)index {
+- (UIControl *)pageAtIndex:(int)index {
     if (index >= self.numPages)
         return nil;
     
-    return [[UITabPage alloc] ui_initWithTab:uiTab(_uiControl) index:index];
+    return [_pages objectAtIndex:index];
 }
 
 - (void)appendControl:(UIControl *)control withName:(OFString *)name {
     uiTabAppend(uiTab(_uiControl), name.UTF8String, control.uiControl);
+    [_pages addObject:control];
 }
 
 - (void)insertControl:(UIControl *)control withName:(OFString *)name before:(int)index {
     uiTabInsertAt(uiTab(_uiControl), name.UTF8String, index, control.uiControl);
+    [_pages insertObject:control atIndex:index];
 }
 
 - (void)removeControlAtIndex:(int)index {
     uiTabDelete(uiTab(_uiControl), index);
+    [_pages removeObjectAtIndex:index];
 }
 
 @end
 
 @implementation UITab (Subscripting)
 
-- (UITabPage *)objectAtIndexedSubscript:(int)index {
+- (UIControl<UITabPage> *)objectAtIndexedSubscript:(int)index {
     if (index >= self.numPages)
         return nil;
     
-    return [[UITabPage alloc] ui_initWithTab:uiTab(_uiControl) index:index];
+    return (UIControl<UITabPage> *)[_pages objectAtIndex:index];
 }
 
-- (void)setObject:(UITabPage *)object atIndexedSubscript:(int)index {
-    [self doesNotRecognizeSelector:_cmd];
+- (void)setObject:(UIControl<UITabPage> *)object atIndexedSubscript:(int)index {
+    if (object == nil)
+        [self removeControlAtIndex:index];
+    else
+        [self insertControl:object withName:object.name before:index];
 }
 
 @end

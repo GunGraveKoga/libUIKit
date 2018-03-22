@@ -10,9 +10,9 @@
 
 OF_ASSUME_NONNULL_BEGIN
 
-@interface UITabPage : OFObject
+@protocol UITabPage
 
-@property (nonatomic, assign, getter=isMargined, setter=makeMargined:) bool margined;
+@property (nonatomic, copy, readonly) OFString *name;
 
 @end
 
@@ -26,14 +26,16 @@ OF_ASSUME_NONNULL_BEGIN
 - (void)insertControl:(OF_KINDOF(UIControl *))control withName:(OFString *)name before:(int)index;
 - (void)removeControlAtIndex:(int)index;
 
-- (UITabPage * _Nullable)pageAtIndex:(int)index;
+- (UIControl * _Nullable)pageAtIndex:(int)index;
+- (bool)isControlAtIndexMargined:(int)index;
+- (void)makeControlAtIndex:(int)index margine:(bool)margined;
 
 @end
 
 @interface UITab (Subscripting)
 
-- (UITabPage * _Nullable)objectAtIndexedSubscript:(int)index;
-- (void)setObject:(UITabPage *)object atIndexedSubscript:(int)index OF_UNAVAILABLE;
+- (UIControl<UITabPage> * _Nullable)objectAtIndexedSubscript:(int)index;
+- (void)setObject:(UIControl<UITabPage> * _Nullable)object atIndexedSubscript:(int)index;
 
 @end
 
