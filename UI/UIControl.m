@@ -36,11 +36,15 @@
     if (_parent != NULL)
         return [[UIControl alloc] initWithControl:uiControlParent(_parent)];
     
+    self->_parent = nil;
+    
     return nil;
 }
 
 - (void)setParent:(UIControl *)parent {
     uiControlSetParent(uiControl(self->_uiControl), parent.uiControl);
+    
+    _parent = parent;
 }
 
 - (bool)isVisible {
@@ -109,6 +113,10 @@
     OF_HASH_FINALIZE(hash);
     
     return hash;
+}
+
+- (id)copy {
+    return self;
 }
 
 - (void)dealloc {

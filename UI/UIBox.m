@@ -9,7 +9,9 @@
 #import "UIBox.h"
 #include <libui/ui.h>
 
-@implementation UIBox
+@implementation UIBox {
+    OFMutableArray OF_GENERIC(UIControl *) *_controls;
+}
 
 + (instancetype)box {
     return [[self alloc] init];
@@ -20,7 +22,11 @@
         OF_INVALID_INIT_METHOD;
     }
     
-    return [super init];
+    id box = [super init];
+    
+    ((__typeof__(self))box)->_controls = [OFMutableArray array];
+    
+    return box;
 }
 
 - (bool)isPadded {
@@ -35,14 +41,29 @@
 
 - (void)appendControl:(UIControl *)control stretchy:(bool)isStretchy {
     uiBoxAppend(uiBox(_uiControl), control.uiControl, isStretchy);
+    
+    [_controls addObject:control];
 }
 
 - (void)appendControl:(UIControl *)control {
-    uiBoxAppend(uiBox(_uiControl), control.uiControl, 0);
+    [self appendControl:control stretchy:false];
+}
+
+- (UIControl *)controlAtIndex:(int)index {
+    return [_controls objectAtIndex:index];
 }
 
 - (void)removeControlAtIndex:(int)index {
     uiBoxDelete(uiBox(_uiControl), index);
+    [_controls removeObjectAtIndex:index];
+}
+
+- (size_t)numControls {
+    return _controls.count;
+}
+
+- (OFArray OF_GENERIC(UIControl *) *)controls {
+    return [_controls copy];
 }
 
 @end

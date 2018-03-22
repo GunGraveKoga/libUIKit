@@ -42,7 +42,7 @@ OF_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithTitle:(OFString *)title size:(of_dimension_t)size menubar:(bool)hasMenubar;
 
-- (void)setChildWindow:(UIWindow *)window;
+- (void)setChild:(UIControl *)childControl;
 
 @end
 

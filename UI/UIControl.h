@@ -34,10 +34,11 @@ OF_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface UIControl : OFObject <UIControl>
+@interface UIControl : OFObject <UIControl, OFCopying>
 {
 @protected
     void *_uiControl;
+    __weak UIControl *_parent;
     bool _owner;
 }
 

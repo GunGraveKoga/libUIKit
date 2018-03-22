@@ -11,4 +11,8 @@
 
 @interface AppDelegate : OFObject <UIApplicationDelegate, UIWindowDelegate>
 
+@property (nonatomic, readonly, strong) UIControl *basicControls;
+@property (nonatomic, readonly, strong) UIControl *numbersPage;
+@property (nonatomic, readonly, strong) UIControl *dataChoosers;
+
 @end

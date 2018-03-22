@@ -69,7 +69,9 @@ static int _onCloseCallback(uiWindow *window, void *data) {
     }
 }
 
-@implementation UIWindow
+@implementation UIWindow {
+    UIControl *_child;
+}
 
 @synthesize delegate = _delegate;
 
@@ -108,8 +110,13 @@ static int _onCloseCallback(uiWindow *window, void *data) {
     return self;
 }
 
-- (void)setChildWindow:(UIWindow *)window {
-    uiWindowSetChild(uiWindow(_uiControl), window.uiControl);
+- (void)setChild:(UIControl *)childControl {
+    UIControl *oldChild = _child;
+    
+    uiWindowSetChild(uiWindow(_uiControl), childControl.uiControl);
+    
+    _child = childControl;
+    oldChild = nil;
 }
 
 - (OFString *)title {

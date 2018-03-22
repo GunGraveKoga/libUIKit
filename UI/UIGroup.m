@@ -9,7 +9,9 @@
 #import "UIGroup.h"
 #include <libui/ui.h>
 
-@implementation UIGroup
+@implementation UIGroup {
+    UIControl *_child;
+}
 
 + (instancetype)group {
     return [[self alloc] init];
@@ -74,7 +76,12 @@
 }
 
 - (void)setChild:(UIControl *)child {
+    UIControl *oldChild = _child;
+    
     uiGroupSetChild(uiGroup(_uiControl), child.uiControl);
+    
+    _child = child;
+    oldChild = nil;
 }
 
 @end
