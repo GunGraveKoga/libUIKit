@@ -14,7 +14,7 @@ OF_ASSUME_NONNULL_BEGIN
 
 @protocol UIComboboxDelegate <OFObject>
 
-- (void)comboboxDidChange:(OF_KINDOF(UIControl<UICombobox> *))sender;
+- (void)comboboxDidChange:(UIControl<UICombobox> *)sender;
 
 @end
 
@@ -22,11 +22,11 @@ OF_ASSUME_NONNULL_BEGIN
 
 @required
 @property (nonatomic, weak) id<UIComboboxDelegate> delegate;
-@property (nonatomic, copy, readonly) OFArray OF_GENERIC(OFString *) *items;
+@property (nonatomic, copy, readonly) OFArray<__kindof OFString *> *items;
 
 + (instancetype)combobox OF_METHOD_FAMILY(new);
-+ (instancetype)comboboxWithItems:(OFArray OF_GENERIC(OFString *) *)items OF_METHOD_FAMILY(new);
-- (instancetype)initWithItems:(OFArray OF_GENERIC(OFString *) *)items;
++ (instancetype)comboboxWithItems:(OFArray<__kindof OFString *> *)items OF_METHOD_FAMILY(new);
+- (instancetype)initWithItems:(OFArray<__kindof OFString *> *)items;
 - (void)append:(OFString *)text;
 - (OFString *)currentText;
 

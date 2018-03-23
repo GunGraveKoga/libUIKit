@@ -22,8 +22,8 @@ OF_ASSUME_NONNULL_BEGIN
 
 @protocol UIWindowDelegate <OFObject>
 
-- (void)windowContentSizeDidChanged:(OF_KINDOF(UIWindow *))sender;
-- (bool)windowWillClosed:(OF_KINDOF(UIWindow *))sender;
+- (void)windowContentSizeDidChanged:(UIWindow *)sender;
+- (bool)windowWillClosed:(UIWindow *)sender;
 
 @end
 

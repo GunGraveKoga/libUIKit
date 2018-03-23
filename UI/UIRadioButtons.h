@@ -27,7 +27,7 @@ OF_ASSUME_NONNULL_BEGIN
 
 @protocol UIRadioButtonsDelegate <OFObject>
 
-- (void)radioButtonsDidSelected:(OF_KINDOF(UIRadioButtons *)) sender;
+- (void)radioButtonsDidSelected:(UIRadioButtons *) sender;
 
 @end
 
@@ -35,14 +35,14 @@ OF_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak) id<UIRadioButtonsDelegate> delegate;
 
-@property (nonatomic, copy, readonly) OFArray OF_GENERIC(id<UIRadioButtonsItem>) *items;
+@property (nonatomic, copy, readonly) OFArray<id<UIRadioButtonsItem>> *items;
 @property (nonatomic, assign, getter=selectedIndex, setter=setSelectedIndex:) int selected;
 @property (nonatomic, readonly) id<UIRadioButtonsItem> selectedItem;
 
 + (instancetype)radioButtons OF_METHOD_FAMILY(new);
 + (instancetype)radioButtonsWithItems:(OFArray OF_GENERIC(id<UIRadioButtonsItem>) *)items OF_METHOD_FAMILY(new);
 
-- (instancetype)initWithItems:(OFArray OF_GENERIC(id<UIRadioButtonsItem>) *)items;
+- (instancetype)initWithItems:(OFArray<id<UIRadioButtonsItem>> *)items;
 - (void)append:(id<UIRadioButtonsItem>)item;
 
 @end

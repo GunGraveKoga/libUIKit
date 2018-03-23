@@ -21,7 +21,7 @@ OF_ASSUME_NONNULL_BEGIN
 
 @protocol UIButtonDelegate <OFObject>
 
-- (void)pressed:(OF_KINDOF(UIButton *))sender;
+- (void)pressed:(UIButton *)sender;
 
 @end
 

@@ -31,7 +31,7 @@ OF_ASSUME_NONNULL_BEGIN
 
 @protocol UIEntryDelegate <OFObject>
 
-- (void)entryDidChanged:(OF_KINDOF(UIControl<UIEntry> *))sender;
+- (void)entryDidChanged:(UIControl<UIEntry> *)sender;
 
 @end
 

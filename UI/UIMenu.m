@@ -41,7 +41,7 @@ static void _onClickedCallback(uiMenuItem *sender, uiWindow *window, void *data)
 }
 
 @implementation UIMenu {
-    OFMutableArray OF_GENERIC(OF_KINDOF(UIMenuItem *)) *_items;
+    OFMutableArray<UIMenuItem *> *_items;
 }
 
 @synthesize delegate = _delegate;

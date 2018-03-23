@@ -13,7 +13,7 @@ OF_ASSUME_NONNULL_BEGIN
 @protocol UIMenuItem
 
 @optional
-- (void)clickedOnWindow:(OF_KINDOF(UIWindow *))window;
+- (void)clickedOnWindow:(UIWindow *)window;
 
 @end
 

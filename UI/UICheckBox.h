@@ -21,7 +21,7 @@ OF_ASSUME_NONNULL_BEGIN
 
 @protocol UICheckboxDelegate <OFObject>
 
-- (void)checkboxToggled:(OF_KINDOF(UICheckbox *))sender;
+- (void)checkboxToggled:(UICheckbox *)sender;
 
 @end
 

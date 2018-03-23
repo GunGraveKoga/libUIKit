@@ -16,7 +16,7 @@ OF_ASSUME_NONNULL_BEGIN
 
 @protocol UIMenuDelegate <OFObject>
 
-- (void)menuItem:(OF_KINDOF(UIMenuItem *))sender didClickedOnWindow:(OF_KINDOF(UIWindow *))window;
+- (void)menuItem:(UIMenuItem *)sender didClickedOnWindow:(UIWindow *)window;
 
 @end
 
@@ -24,23 +24,23 @@ OF_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak) id<UIMenuDelegate> delegate;
 @property (nonatomic, copy, readonly) OFString *name;
-@property (nonatomic, copy, readonly) OFArray OF_GENERIC(OF_KINDOF(UIMenuItem *)) *items;
+@property (nonatomic, copy, readonly) OFArray<__kindof UIMenuItem *> *items;
 
 + (instancetype)menuWithName:(OFString *)name OF_METHOD_FAMILY(new);
 
 - (instancetype)initWithName:(OFString *)name;
 
-- (void)appendItem:(OF_KINDOF(UIMenuItem *))item;
-- (void)appendCheckableItem:(OF_KINDOF(UIMenuItem *))item;
-- (void)appendQuitItem:(OF_KINDOF(UIMenuItem *))item;
-- (void)appendPreferencesItem:(OF_KINDOF(UIMenuItem *))item;
-- (void)appendAboutItem:(OF_KINDOF(UIMenuItem *))item;
+- (void)appendItem:(UIMenuItem *)item;
+- (void)appendCheckableItem:(UIMenuItem *)item;
+- (void)appendQuitItem:(UIMenuItem *)item;
+- (void)appendPreferencesItem:(UIMenuItem *)item;
+- (void)appendAboutItem:(UIMenuItem *)item;
 
-- (OF_KINDOF(UIMenuItem *))appendItemWithName:(OFString *)name;
-- (OF_KINDOF(UIMenuItem *))appendCheckableItemWithName:(OFString *)name;
-- (OF_KINDOF(UIMenuItem *))appendQuitItem;
-- (OF_KINDOF(UIMenuItem *))appendPreferencesItem;
-- (OF_KINDOF(UIMenuItem *))appendAboutItem;
+- (UIMenuItem *)appendItemWithName:(OFString *)name;
+- (UIMenuItem *)appendCheckableItemWithName:(OFString *)name;
+- (UIMenuItem *)appendQuitItem;
+- (UIMenuItem *)appendPreferencesItem;
+- (UIMenuItem *)appendAboutItem;
 - (void)appendSeparator;
 
 @end

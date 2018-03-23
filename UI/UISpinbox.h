@@ -21,7 +21,7 @@ OF_ASSUME_NONNULL_BEGIN
 
 @protocol UISpinboxDelegate <OFObject>
 
-- (void)spinboxValueChanged:(OF_KINDOF(UISpinbox *))sender;
+- (void)spinboxValueChanged:(UISpinbox *)sender;
 
 @end
 

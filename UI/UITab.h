@@ -22,8 +22,8 @@ OF_ASSUME_NONNULL_BEGIN
 
 + (instancetype)tab OF_METHOD_FAMILY(new);
 
-- (void)appendControl:(OF_KINDOF(UIControl *))control withName:(OFString *)name;
-- (void)insertControl:(OF_KINDOF(UIControl *))control withName:(OFString *)name before:(int)index;
+- (void)appendControl:(UIControl *)control withName:(OFString *)name;
+- (void)insertControl:(UIControl *)control withName:(OFString *)name before:(int)index;
 - (void)removeControlAtIndex:(int)index;
 
 - (UIControl * _Nullable)pageAtIndex:(int)index;

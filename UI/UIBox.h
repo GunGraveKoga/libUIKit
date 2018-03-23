@@ -13,14 +13,14 @@ OF_ASSUME_NONNULL_BEGIN
 @interface UIBox : UIControl
 
 @property (nonatomic, assign, getter=isPadded, setter=makePadded:) bool padded;
-@property (nonatomic, copy, readonly) OFArray OF_GENERIC(UIControl *) *controls;
+@property (nonatomic, copy, readonly) OFArray<__kindof UIControl *> *controls;
 @property (nonatomic, assign, readonly) size_t numControls;
 
 + (instancetype)box OF_METHOD_FAMILY(new);
 
-- (void)appendControl:(OF_KINDOF(UIControl *))control;
-- (void)appendControl:(OF_KINDOF(UIControl *))control stretchy:(bool)isStretchy;
-- (OF_KINDOF(UIControl *))controlAtIndex:(int)index;
+- (void)appendControl:(UIControl *)control;
+- (void)appendControl:(UIControl *)control stretchy:(bool)isStretchy;
+- (UIControl *)controlAtIndex:(int)index;
 - (void)removeControlAtIndex:(int)index;
 
 @end

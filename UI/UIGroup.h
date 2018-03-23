@@ -19,7 +19,7 @@ OF_ASSUME_NONNULL_BEGIN
 + (instancetype)groupWithTitle:(OFString *)title OF_METHOD_FAMILY(new);
 
 - (instancetype)initWithTitle:(OFString *)title;
-- (void)setChild:(OF_KINDOF(UIControl *))child;
+- (void)setChild:(UIControl *)child;
 
 @end
 

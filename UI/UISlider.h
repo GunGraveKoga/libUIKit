@@ -21,7 +21,7 @@ OF_ASSUME_NONNULL_BEGIN
 
 @protocol UISliderDelegate <OFObject>
 
-- (void)sliderDidChanged:(OF_KINDOF(UISlider *))sender;
+- (void)sliderDidChanged:(UISlider *)sender;
 
 @end
 
