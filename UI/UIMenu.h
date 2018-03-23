@@ -20,21 +20,21 @@ OF_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface UIMenu : UIControl
+@interface UIMenu<__covariant MenuItemType:UIMenuItem *> : UIControl
 
 @property (nonatomic, weak) id<UIMenuDelegate> delegate;
 @property (nonatomic, copy, readonly) OFString *name;
-@property (nonatomic, copy, readonly) OFArray<__kindof UIMenuItem *> *items;
+@property (nonatomic, copy, readonly) OFArray<__kindof MenuItemType> *items;
 
 + (instancetype)menuWithName:(OFString *)name OF_METHOD_FAMILY(new);
 
 - (instancetype)initWithName:(OFString *)name;
 
-- (void)appendItem:(UIMenuItem *)item;
-- (void)appendCheckableItem:(UIMenuItem *)item;
-- (void)appendQuitItem:(UIMenuItem *)item;
-- (void)appendPreferencesItem:(UIMenuItem *)item;
-- (void)appendAboutItem:(UIMenuItem *)item;
+- (void)appendItem:(MenuItemType)item;
+- (void)appendCheckableItem:(MenuItemType)item;
+- (void)appendQuitItem:(MenuItemType)item;
+- (void)appendPreferencesItem:(MenuItemType)item;
+- (void)appendAboutItem:(MenuItemType)item;
 
 - (UIMenuItem *)appendItemWithName:(OFString *)name;
 - (UIMenuItem *)appendCheckableItemWithName:(OFString *)name;

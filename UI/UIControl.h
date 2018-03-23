@@ -18,7 +18,7 @@ OF_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign, readonly) uiControl *uiControl OF_RETURNS_INNER_POINTER;
 @property (nonatomic, assign, readonly) void *uiControlHandle OF_RETURNS_INNER_POINTER;
-@property (nonatomic, strong, nullable) id<UIControl> parent;
+@property (nonatomic, strong, nullable) __kindof id<UIControl> parent;
 @property (nonatomic, assign, getter=isVisible, readonly) bool visible;
 @property (nonatomic, assign, getter=isEnabled, readonly) bool enabled;
 @property (nonatomic, assign, getter=isOnTopLevel, readonly) bool onTopLevel;
@@ -31,6 +31,12 @@ OF_ASSUME_NONNULL_BEGIN
 - (void)hide;
 - (void)enable;
 - (void)disable;
+
+@end
+
+@protocol UILabeledControl
+
+@property (nonatomic, copy, readonly) OFString *label;
 
 @end
 

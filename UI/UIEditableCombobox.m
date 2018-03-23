@@ -31,7 +31,7 @@ static void _onSelectedCallback(uiCombobox *combobox, void *data) {
 }
 
 @implementation UIEditableCombobox {
-    OFMutableArray OF_GENERIC(OFString *) *_items;
+    OFMutableArray<OFString *> *_items;
 }
 
 @synthesize delegate = _delegate;
@@ -40,7 +40,7 @@ static void _onSelectedCallback(uiCombobox *combobox, void *data) {
     return [[self alloc] init];
 }
 
-+ (instancetype)comboboxWithItems:(OFArray OF_GENERIC(OFString *) *)items {
++ (instancetype)comboboxWithItems:(OFArray<__kindof OFString *> *)items {
     return [[self alloc] initWithItems:items];
 }
 
@@ -63,7 +63,7 @@ static void _onSelectedCallback(uiCombobox *combobox, void *data) {
     return self;
 }
 
-- (instancetype)initWithItems:(OFArray OF_GENERIC(OFString *) *)items {
+- (instancetype)initWithItems:(OFArray<__kindof OFString *> *)items {
     self = [super init];
     
     _uiControl = uiNewEditableCombobox();
@@ -86,7 +86,7 @@ static void _onSelectedCallback(uiCombobox *combobox, void *data) {
     return self;
 }
 
-- (OFArray OF_GENERIC(OFString *) *)items {
+- (OFArray<__kindof OFString *> *)items {
     return [_items copy];
 }
 

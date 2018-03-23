@@ -9,41 +9,8 @@
 #import "UITab.h"
 #include <libui/ui.h>
 
-@interface UITabPage()
-
-- (instancetype)ui_initWithTab:(uiTab *)tab index:(int)idx OF_METHOD_FAMILY(init);
-
-@end
-
-@implementation UITabPage {
-    uiTab * _tab;
-    int _idx;
-}
-
-- (instancetype)ui_initWithTab:(uiTab *)tab index:(int)idx {
-    self = [super init];
-    
-    _tab = tab;
-    
-    if (_tab == NULL) return nil;
-    
-    _idx = idx;
-    
-    return self;
-}
-
-- (bool)isMargined {
-    return (bool)(uiTabMargined(_tab, _idx));
-}
-
-- (void)makeMargined:(bool)margined {
-    uiTabSetMargined(_tab, _idx, margined);
-}
-
-@end
-
 @implementation UITab {
-    OFMutableArray OF_GENERIC(UIControl *) *_pages;
+    OFMutableArray<UIControl *> *_pages;
 }
 
 + (instancetype)tab {
@@ -81,9 +48,17 @@
     [_pages addObject:control];
 }
 
+- (void)appendControl:(UIControl<UILabeledControl> *)control {
+    [self appendControl:control withName:control.label];
+}
+
 - (void)insertControl:(UIControl *)control withName:(OFString *)name before:(int)index {
     uiTabInsertAt(uiTab(_uiControl), name.UTF8String, index, control.uiControl);
     [_pages insertObject:control atIndex:index];
+}
+
+- (void)insertControl:(UIControl<UILabeledControl> *)control before:(int)index {
+    [self insertControl:control withName:control.label before:index];
 }
 
 - (void)removeControlAtIndex:(int)index {
@@ -91,22 +66,12 @@
     [_pages removeObjectAtIndex:index];
 }
 
-@end
-
-@implementation UITab (Subscripting)
-
-- (UIControl<UITabPage> *)objectAtIndexedSubscript:(int)index {
-    if (index >= self.numPages)
-        return nil;
-    
-    return (UIControl<UITabPage> *)[_pages objectAtIndex:index];
+- (bool)isControlAtIndexMargined:(int)index {
+    return (bool)(uiTabMargined(uiTab(_uiControl), index));
 }
 
-- (void)setObject:(UIControl<UITabPage> *)object atIndexedSubscript:(int)index {
-    if (object == nil)
-        [self removeControlAtIndex:index];
-    else
-        [self insertControl:object withName:object.name before:index];
+- (void)makeControlAtIndex:(int)index margine:(bool)margined {
+    uiTabSetMargined(uiTab(_uiControl), index, margined);
 }
 
 @end

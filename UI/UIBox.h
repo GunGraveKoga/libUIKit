@@ -10,17 +10,17 @@
 
 OF_ASSUME_NONNULL_BEGIN
 
-@interface UIBox : UIControl
+@interface UIBox<__covariant ControlType:UIControl *> : UIControl
 
 @property (nonatomic, assign, getter=isPadded, setter=makePadded:) bool padded;
-@property (nonatomic, copy, readonly) OFArray<__kindof UIControl *> *controls;
+@property (nonatomic, copy, readonly) OFArray<__kindof ControlType> *controls;
 @property (nonatomic, assign, readonly) size_t numControls;
 
 + (instancetype)box OF_METHOD_FAMILY(new);
 
-- (void)appendControl:(UIControl *)control;
-- (void)appendControl:(UIControl *)control stretchy:(bool)isStretchy;
-- (UIControl *)controlAtIndex:(int)index;
+- (void)appendControl:(ControlType)control;
+- (void)appendControl:(ControlType)control stretchy:(bool)isStretchy;
+- (__kindof ControlType)controlAtIndex:(int)index;
 - (void)removeControlAtIndex:(int)index;
 
 @end

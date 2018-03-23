@@ -10,7 +10,7 @@
 #include <libui/ui.h>
 
 @implementation UIBox {
-    OFMutableArray OF_GENERIC(UIControl *) *_controls;
+    OFMutableArray<UIControl *> *_controls;
 }
 
 + (instancetype)box {
@@ -62,7 +62,7 @@
     return _controls.count;
 }
 
-- (OFArray OF_GENERIC(UIControl *) *)controls {
+- (OFArray<__kindof UIControl *> *)controls {
     return [_controls copy];
 }
 

@@ -28,6 +28,8 @@
 #import "UIMultilineEntry.h"
 #import "UIMenuItem.h"
 #import "UIMenu.h"
+#import "UIForm.h"
+#import "UIGrid.h"
 
 @protocol UIApplicationDelegate <OFApplicationDelegate>
 

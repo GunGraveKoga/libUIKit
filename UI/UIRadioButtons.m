@@ -31,7 +31,7 @@ static void _onSelectedCallback(uiRadioButtons *radioButtons, void *data) {
 }
 
 @implementation UIRadioButtons {
-    OFMutableArray OF_GENERIC(id<UIRadioButtonsItem>) *_items;
+    OFMutableArray<OFString *> *_items;
 }
 
 @synthesize delegate = _delegate;
@@ -40,7 +40,7 @@ static void _onSelectedCallback(uiRadioButtons *radioButtons, void *data) {
     return [[self alloc] init];
 }
 
-+ (instancetype)radioButtonsWithItems:(OFArray OF_GENERIC(id<UIRadioButtonsItem>) *)items {
++ (instancetype)radioButtonsWithItems:(OFArray<__kindof OFString *> *)items {
     return [[self alloc] initWithItems:items];
 }
 
@@ -63,7 +63,7 @@ static void _onSelectedCallback(uiRadioButtons *radioButtons, void *data) {
     return self;
 }
 
-- (instancetype)initWithItems:(OFArray<id<UIRadioButtonsItem>> *)items {
+- (instancetype)initWithItems:(OFArray<__kindof OFString*> *)items {
     self = [super init];
     
     _uiControl = uiNewRadioButtons();
@@ -76,8 +76,8 @@ static void _onSelectedCallback(uiRadioButtons *radioButtons, void *data) {
     
     _items = [OFMutableArray arrayWithArray:items];
     
-    for (id<UIRadioButtonsItem> item in _items) {
-        uiRadioButtonsAppend(uiRadioButtons(_uiControl), [item name].UTF8String);
+    for (OFString *item in _items) {
+        uiRadioButtonsAppend(uiRadioButtons(_uiControl), item.UTF8String);
     }
     
     void *radioButtonsObject = (__bridge void *)self;
@@ -86,11 +86,11 @@ static void _onSelectedCallback(uiRadioButtons *radioButtons, void *data) {
     return self;
 }
 
-- (OFArray<id<UIRadioButtonsItem>> *)items {
+- (OFArray<__kindof OFString *> *)items {
     return [_items copy];
 }
 
-- (id<UIRadioButtonsItem>)selectedItem {
+- (OFString *)selectedItem {
     return _items[self.selected];
 }
 
@@ -102,9 +102,9 @@ static void _onSelectedCallback(uiRadioButtons *radioButtons, void *data) {
     uiRadioButtonsSetSelected(uiRadioButtons(_uiControl), selected);
 }
 
-- (void)append:(id<UIRadioButtonsItem>)item {
+- (void)append:(OFString *)item {
     [_items addObject:item];
-    uiRadioButtonsAppend(uiRadioButtons(_uiControl), [item name].UTF8String);
+    uiRadioButtonsAppend(uiRadioButtons(_uiControl), item.UTF8String);
 }
 
 @end

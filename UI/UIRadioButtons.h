@@ -10,12 +10,6 @@
 
 OF_ASSUME_NONNULL_BEGIN
 
-@protocol UIRadioButtonsItem
-
-- (OFString *)name;
-
-@end
-
 @protocol UIRadioButtons
 
 @optional
@@ -35,15 +29,15 @@ OF_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak) id<UIRadioButtonsDelegate> delegate;
 
-@property (nonatomic, copy, readonly) OFArray<id<UIRadioButtonsItem>> *items;
+@property (nonatomic, copy, readonly) OFArray<__kindof OFString *> *items;
 @property (nonatomic, assign, getter=selectedIndex, setter=setSelectedIndex:) int selected;
-@property (nonatomic, readonly) id<UIRadioButtonsItem> selectedItem;
+@property (nonatomic, copy, readonly) OFString *selectedItem;
 
 + (instancetype)radioButtons OF_METHOD_FAMILY(new);
-+ (instancetype)radioButtonsWithItems:(OFArray OF_GENERIC(id<UIRadioButtonsItem>) *)items OF_METHOD_FAMILY(new);
++ (instancetype)radioButtonsWithItems:(OFArray<__kindof OFString *> *)items OF_METHOD_FAMILY(new);
 
-- (instancetype)initWithItems:(OFArray<id<UIRadioButtonsItem>> *)items;
-- (void)append:(id<UIRadioButtonsItem>)item;
+- (instancetype)initWithItems:(OFArray<__kindof OFString*> *)items;
+- (void)append:(OFString *)item;
 
 @end
 
